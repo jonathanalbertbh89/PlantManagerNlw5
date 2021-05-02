@@ -1,5 +1,8 @@
 import React from 'react';
-import Welcome from './src/pages/welcome/Welcome';
+import {
+  NavigationContainer
+} from '@react-navigation/native'
+import Route from './src/routes/route';
 import AppLoading from 'expo-app-loading';
 import { 
     useFonts,
@@ -17,10 +20,11 @@ export default function App(){
       return(
         <AppLoading/>
       );
+    }else{
+      return(
+        <NavigationContainer>
+          <Route/>
+        </NavigationContainer>
+      )
     }
-
-    return(
-      <Welcome/>
-    )
-
 }
